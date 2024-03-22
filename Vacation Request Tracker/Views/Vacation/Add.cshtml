@@ -1,0 +1,65 @@
+﻿@model TbVacationRequest
+
+
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1>Add Vacation</h1>
+    </div>
+</div>
+
+<div class="container py-5">
+    <form method="post">
+
+
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" asp-for="EmployeeName" />
+            <span class="text-danger" asp-validation-for="EmployeeName"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" asp-for="Title" />
+            <span class="text-danger" asp-validation-for="Title"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Vacation Date From</label>
+            <input type="date" class="form-control" id="vacationDateFrom" asp-for="VacationDateFrom" />
+            <span class="text-danger" asp-validation-for="VacationDateFrom"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Date Of Birth</label>
+            <input type="date" class="form-control" id="vacationDateTo" asp-for="VacationDateTo" />
+            <span class="text-danger" asp-validation-for="VacationDateTo"></span>
+        </div>
+
+
+        <div class="mb-3">
+            <label class="form-label" asp-for="Department">Department</label>
+            <select class="form-control" asp-for="Department">
+                <option value="">-- Select Department --</option>
+                <option value="IT">IT</option>
+                <option value="Human Resources">Human Resources</option>
+                <option value="Sales">Sales</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Finance">Finance</option>
+                <option value="Support">Support</option>
+            </select>
+            <span class="text-danger" asp-validation-for="Department"></span>
+        </div>
+
+
+        <div class="mb-3">
+            <label class="form-label">Notes</label>
+            <input type="text" class="form-control" id="notes" asp-for="Notes" />
+            <span class="text-danger" asp-validation-for="Notes"></span>
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </div>
+    </form>
+</div>

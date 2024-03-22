@@ -1,0 +1,19 @@
+﻿
+
+
+
+
+<div class="container py-5">
+
+<h2>Confirmation</h2>
+
+@if (TempData["ConfirmationMessage"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["ConfirmationMessage"]
+    </div>
+}
+
+<a asp-controller="Home" asp-action="Index" class="btn btn-primary">Back to Home</a>
+
+</div>

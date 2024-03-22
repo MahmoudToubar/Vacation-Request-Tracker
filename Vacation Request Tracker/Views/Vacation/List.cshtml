@@ -1,0 +1,46 @@
+﻿@model List<TbVacationRequest>
+
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1>Show All Vacations</h1>
+    </div>
+</div>
+
+<div class="container py-5">
+    @if (Model != null && Model.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Submission Date</th>
+                    <th>Employee Name</th>
+                    <th>Department</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var vac in Model)
+                {
+                    <tr>
+                        <td>@vac.SubmissionDate.ToString("dd/MM/yyyy")</td>
+                        <td>@vac.EmployeeName</td>
+                        <td>@vac.Department</td>
+                        <td>@vac.VacationDateFrom.ToString("dd/MM/yyyy")</td>
+                        <td>@vac.VacationDateTo.ToString("dd/MM/yyyy")</td>
+                        <td>
+                            <a asp-area="" asp-controller="Vacation" asp-action="Edit" asp-route-id="@vac.RequestId" class="btn btn-primary">Edit</a>
+                            <a asp-area="" asp-controller="Vacation" asp-action="Details" asp-route-id="@vac.RequestId" class="btn btn-info">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No Employees Found!</p>
+    }
+</div>

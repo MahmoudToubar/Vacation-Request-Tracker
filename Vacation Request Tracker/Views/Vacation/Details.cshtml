@@ -1,0 +1,43 @@
+﻿@model TbVacationRequest
+
+@{
+    ViewData["Title"] = "Vacation Request Details";
+}
+
+<div class="container py-5">
+
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">Request Details</h3>
+        <div class="mb-3">
+            <strong>Employee Name:</strong> @Model.EmployeeName
+        </div>
+        <div class="mb-3">
+            <strong>Department:</strong> @Model.Department
+        </div>
+        <div class="mb-3">
+            <strong>Submission Date:</strong> @Model.SubmissionDate.ToString("dd/MM/yyyy")
+        </div>
+        <div class="mb-3">
+            <strong>Vacation Start:</strong> @Model.VacationDateFrom.ToString("dd/MM/yyyy")
+        </div>
+        <div class="mb-3">
+            <strong>Vacation End:</strong> @Model.VacationDateTo.ToString("dd/MM/yyyy")
+        </div>
+        <div class="mb-3">
+            <strong>Returning Date:</strong> @Model.ReturningDate.ToString("dd/MM/yyyy")
+        </div>
+        <div class="mb-3">
+            <strong>Total Days Requested:</strong> @Model.TotalDaysRequested
+        </div>
+        <div class="mb-3">
+            <strong>Notes:</strong> @Model.Notes
+        </div>
+    </div>
+</div>
+</div>
+
+
