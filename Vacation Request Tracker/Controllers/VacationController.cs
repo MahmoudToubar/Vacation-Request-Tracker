@@ -136,7 +136,7 @@ namespace Vacation_Request_Tracker.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Details(Guid id)
         {
-            var request = await vacationRepositories.GetAsync(id); 
+            var request = await vacationRepositories.GetAsync(id);  
             if (request == null)
             {
                 return NotFound();
